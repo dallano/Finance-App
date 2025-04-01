@@ -22,5 +22,7 @@ If you would like to restart the program with fresh data, delete the generated .
 
 ## To do ##
 
-The project seeks to add monthly tracking functionality, and along with it more statistical data to help guide and
+Add monthly tracking functionality, and along with it more statistical data to help guide and
 inform the user of their spending habits.
+
+Add the ability to remove or customized past data entries.
