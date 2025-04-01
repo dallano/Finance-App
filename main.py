@@ -40,17 +40,15 @@ if not profileDF.empty:
     else:
         st.write('No spending history recorded.')
 else:
-    st.write('###Welcome to your new financial tracker!')
-    st.write('##Let\'s setup your profile')
+    st.title('Welcome to your new financial tracker!')
+    st.subheader('Let\'s setup your profile')
 
     with st.form('profile_entry'):
         name = st.text_input('Name:')
         income = st.number_input ('Monthly Income', min_value = 0.00, format = '%0.2f')
-        budget = st.number_input('Budget', min_value = income, format = '%0.2f')
+        budget = st.number_input('Budget', min_value = 0.00, format = '%0.2f')
         submitted   = st.form_submit_button('Create User')
 
-        if budget > income:
-            print('Budget cannot be higher than your income.')
-        elif submitted:
+        if submitted:
             utils.add_profile(name, income, budget)
             st.rerun()
