@@ -15,4 +15,3 @@ with st.form('transaction_entry'):
     if submitted:
         st.balloons()
         utils.add_transaction(date, amount, category, description)
-

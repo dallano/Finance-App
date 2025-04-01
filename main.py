@@ -29,12 +29,13 @@ if not profileDF.empty:
     col3.metric(label = 'Spending', value = spending)
     col4.metric(label = 'Projected Savings', value = savings)
 
+    # Savings Graph
     # Draw graph if user has entered transactional data
     if spending:
-        # Savings Graph
-        fig, ax = plt.subplots()
+        fig, ax    = plt.subplots()
         categories = ['Income', 'Budget', 'Spending', 'Savings']
-        values = [income, budget, spending, savings]
+        values     = [income, budget, spending, savings]
+
         ax.bar(categories, values, color = ['green', 'orange', 'red', 'blue'])
         st.pyplot(fig)
     else:
@@ -44,10 +45,10 @@ else:
     st.subheader('Let\'s setup your profile')
 
     with st.form('profile_entry'):
-        name = st.text_input('Name:')
-        income = st.number_input ('Monthly Income', min_value = 0.00, format = '%0.2f')
-        budget = st.number_input('Budget', min_value = 0.00, format = '%0.2f')
-        submitted   = st.form_submit_button('Create User')
+        name      = st.text_input('Name:')
+        income    = st.number_input ('Monthly Income', min_value = 0.00, format = '%0.2f')
+        budget    = st.number_input('Budget', min_value = 0.00, format = '%0.2f')
+        submitted = st.form_submit_button('Create User')
 
         if submitted:
             utils.add_profile(name, income, budget)
